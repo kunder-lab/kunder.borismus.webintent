@@ -1,9 +1,9 @@
 {
-  "name": "borismus-cordova-webintent",
+  "name": "borismus-cordova-plugin-webintent",
   "version": "1.0.0",
   "description": "Web intents for Cordova",
   "cordova": {
-    "id": "borismus-cordova-webintent",
+    "id": "borismus-cordova-plugin-webintent",
     "platforms": [
       "android"
     ]
