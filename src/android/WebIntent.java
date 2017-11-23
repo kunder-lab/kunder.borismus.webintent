@@ -110,10 +110,6 @@ public class WebIntent extends CordovaPlugin {
                 return true;
 
             } else if (action.equals("resetUri")) {
-                if (args.length() != 0) {
-                    callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.INVALID_ACTION));
-                    return false;
-                }
                 Intent i = ((CordovaActivity) this.cordova.getActivity()).getIntent();
                 if (i.getDataString() != null) {
                     i.setData(null);

@@ -42,8 +42,12 @@
     };
 
     WebIntent.prototype.resetUri = function (success, fail) {
-        return cordova.exec(null, null, 'WebIntent', 'resetUri', []);
-    }
+        return cordova.exec(function (args) {
+            success(args);
+        }, function (args) {
+            fail(args);
+        }, 'WebIntent', 'resetUri', []);
+    };
 
     WebIntent.prototype.getExtra = function(params, success, fail) {
         return cordova.exec(function(args) {
