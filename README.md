@@ -78,7 +78,11 @@ Gets the Uri the app was invoked with. For example:
 ### resetUri ###
 Reset the value of the URL if it has been configured. For example:
 
-    window.plugins.webintent.resetUri();
+    window.plugins.webintent.resetUri(function() {
+        // do something in success case
+    }, function() {
+        // do something in error case
+    });
 
 ### onNewIntent ###
 Gets called when onNewIntent is called for the parent activity. Used in only certain launchModes. For example:
