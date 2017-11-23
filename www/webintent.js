@@ -3,7 +3,7 @@
  * Copyright (c) Boris Smus 2010
  *
  */
- (function(cordova){
+(function(cordova){
     var WebIntent = function() {
 
     };
@@ -39,6 +39,14 @@
         }, function(args) {
             fail(args);
         }, 'WebIntent', 'getUri', []);
+    };
+
+    WebIntent.prototype.resetUri = function (success, fail) {
+        return cordova.exec(function (args) {
+            success(args);
+        }, function (args) {
+            fail(args);
+        }, 'WebIntent', 'resetUri', []);
     };
 
     WebIntent.prototype.getExtra = function(params, success, fail) {

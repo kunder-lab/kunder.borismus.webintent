@@ -108,6 +108,15 @@ public class WebIntent extends CordovaPlugin {
                 //return new PluginResult(PluginResult.Status.OK, uri);
                 callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, uri));
                 return true;
+
+            } else if (action.equals("resetUri")) {
+                Intent i = ((CordovaActivity) this.cordova.getActivity()).getIntent();
+                if (i.getDataString() != null) {
+                    i.setData(null);
+                }
+                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
+                return true;
+
             } else if (action.equals("onNewIntent")) {
             	//save reference to the callback; will be called on "new intent" events
                 this.onNewIntentCallbackContext = callbackContext;
